@@ -3,6 +3,25 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award, BookOpen, Calendar, Cloud, ShieldCheck } from "lucide-react";
 
+const educationList = [
+  {
+    degree: "Master of Computer Application (MCA)",
+    institution: "Hi-Tech Institute of Engineering and Technology",
+    location: "Ghaziabad, U.P",
+    period: "Aug 2021 - May 2023",
+    type: "Postgraduate Degree",
+    description: "Advanced studies focused on software engineering concepts, database systems optimization, algorithms design, web application development frameworks, and emerging computer network sciences.",
+  },
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution: "INMANTEC Group of Institutions",
+    location: "Ghaziabad, U.P",
+    period: "Aug 2018 - May 2021",
+    type: "Undergraduate Degree",
+    description: "Foundational computer science studies covering programming languages, database systems design, web design/development technologies, data structures, and software engineering methodologies.",
+  },
+];
+
 export default function Education() {
   return (
     <section id="education" className="py-24 relative overflow-hidden bg-space-dark/10">
@@ -39,50 +58,53 @@ export default function Education() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-6 flex flex-col"
+            className="lg:col-span-6 flex flex-col gap-6"
           >
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-2">
               <BookOpen className="w-5 h-5 text-neon-blue" />
               <h3 className="font-display font-bold text-xl md:text-2xl text-white tracking-wide">
                 Academic Background
               </h3>
             </div>
 
-            <motion.div
-              whileHover={{ y: -4 }}
-              className="glass-panel p-6 md:p-8 rounded-2xl border border-white/5 flex-1 relative overflow-hidden flex flex-col justify-between"
-              style={{
-                boxShadow: "inset 0 0 15px rgba(0, 240, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.2)",
-              }}
-            >
-              <div>
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div>
-                    <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium text-neon-blue bg-neon-blue/5 border border-neon-blue/20">
-                      Postgraduate Degree
-                    </span>
-                    <h4 className="font-display font-extrabold text-2xl md:text-3xl text-white mt-3 leading-tight">
-                      MCA
-                    </h4>
-                    <p className="text-gray-300 text-base md:text-lg font-sans mt-1">
-                      Master of Computer Applications
-                    </p>
+            {educationList.map((edu, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -4 }}
+                className="glass-panel p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden flex flex-col justify-between"
+                style={{
+                  boxShadow: "inset 0 0 15px rgba(0, 240, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                      <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium text-neon-blue bg-neon-blue/5 border border-neon-blue/20">
+                        {edu.type}
+                      </span>
+                      <h4 className="font-display font-extrabold text-xl md:text-2xl text-white mt-3 leading-tight">
+                        {edu.degree}
+                      </h4>
+                      <p className="text-gray-300 text-sm md:text-base font-sans mt-1">
+                        {edu.institution} <span className="text-gray-500">| {edu.location}</span>
+                      </p>
+                    </div>
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/10 shrink-0">
+                      <GraduationCap className="w-6 h-6 text-neon-blue" />
+                    </div>
                   </div>
-                  <div className="p-3 bg-white/5 rounded-xl border border-white/10 shrink-0">
-                    <GraduationCap className="w-6 h-6 text-neon-blue" />
-                  </div>
+
+                  <p className="text-gray-400 text-sm leading-relaxed mt-4">
+                    {edu.description}
+                  </p>
                 </div>
 
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed mt-4">
-                  Advanced studies focused on software engineering concepts, database systems optimization, algorithms design, web application development frameworks, and emerging computer network sciences.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-2 mt-8 text-gray-400 text-sm border-t border-white/5 pt-4">
-                <Calendar className="w-4 h-4 text-gray-500" />
-                <span>Completed</span>
-              </div>
-            </motion.div>
+                <div className="flex items-center gap-2 mt-6 text-gray-400 text-xs md:text-sm border-t border-white/5 pt-4">
+                  <Calendar className="w-4 h-4 text-gray-500" />
+                  <span>{edu.period}</span>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
 
           {/* Right Column: Certifications */}

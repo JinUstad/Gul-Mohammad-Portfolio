@@ -82,7 +82,7 @@ export default function Contact() {
               <div className="space-y-6">
                 {/* Email */}
                 <a
-                  href="mailto:gulmohammad.dev@gmail.com"
+                  href="mailto:gul.m0628@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/2 hover:bg-white/5 hover:border-neon-blue/40 transition-all duration-300 group"
                 >
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10 group-hover:bg-neon-blue/10 group-hover:border-neon-blue/30 transition-colors shrink-0">
@@ -91,14 +91,14 @@ export default function Contact() {
                   <div>
                     <span className="text-gray-500 text-xs font-display uppercase tracking-wider block">Email Me</span>
                     <span className="text-gray-200 text-sm md:text-base font-sans break-all group-hover:text-white transition-colors">
-                      gulmohammad.dev@gmail.com
+                      gul.m0628@gmail.com
                     </span>
                   </div>
                 </a>
 
                 {/* Phone */}
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918512889586"
                   className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/2 hover:bg-white/5 hover:border-neon-purple/40 transition-all duration-300 group"
                 >
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10 group-hover:bg-neon-purple/10 group-hover:border-neon-purple/30 transition-colors shrink-0">
@@ -107,7 +107,7 @@ export default function Contact() {
                   <div>
                     <span className="text-gray-500 text-xs font-display uppercase tracking-wider block">Call Me</span>
                     <span className="text-gray-200 text-sm md:text-base font-sans group-hover:text-white transition-colors">
-                      +91 98765 43210
+                      +91 85128 89586
                     </span>
                   </div>
                 </a>
